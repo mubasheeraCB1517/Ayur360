@@ -1,0 +1,1 @@
+final String baseUrl ="https://app.ayur360.in/";
