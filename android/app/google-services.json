@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1070027403375",
+    "project_id": "elibrary-8151b",
+    "storage_bucket": "elibrary-8151b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070027403375:android:c88682a641e92501a99d9a",
+        "android_client_info": {
+          "package_name": "com.vedhikesolutions.elibrary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070027403375-783h9k2nn5p7b8cdm3kua3ve92i0dt1r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB32xpOhDpvAVFHCUCE6JMVQEDpVtsKW1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070027403375-783h9k2nn5p7b8cdm3kua3ve92i0dt1r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
