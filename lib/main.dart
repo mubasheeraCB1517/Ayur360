@@ -16,9 +16,9 @@ import 'package:overlay_support/overlay_support.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 
+import 'HomeScreen/Welcome.dart';
 import 'Route/route.dart';
 
-import 'helper/LanguageChangeProvider.dart';
 
 
 // Toggle this to cause an async error to be thrown during initialization
@@ -220,8 +220,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     //SizeConfig().init(context);
 
-    return ChangeNotifierProvider<LanguageChangeProvider>(
-      create: (context) => LanguageChangeProvider(),
+    return ChangeNotifierProvider(
+
+      create: (BuildContext context) {  },
       child: Builder(
           builder: (context) => MaterialApp(
             builder: (context, widget) => ResponsiveWrapper.builder(

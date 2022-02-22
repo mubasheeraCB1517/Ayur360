@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "1070027403375",
-    "project_id": "elibrary-8151b",
-    "storage_bucket": "elibrary-8151b.appspot.com"
+    "project_number": "24567779503",
+    "project_id": "ayur360-fd218",
+    "storage_bucket": "ayur360-fd218.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1070027403375:android:c88682a641e92501a99d9a",
+        "mobilesdk_app_id": "1:24567779503:android:b65fa22df98a467c76c45a",
         "android_client_info": {
-          "package_name": "com.vedhikesolutions.elibrary"
+          "package_name": "com.example.ayur360_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1070027403375-783h9k2nn5p7b8cdm3kua3ve92i0dt1r.apps.googleusercontent.com",
+          "client_id": "24567779503-p0p32vd125o9tdp0isdrtnlcsf65kkaf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB32xpOhDpvAVFHCUCE6JMVQEDpVtsKW1k"
+          "current_key": "AIzaSyBFPZ5tuULj4_X2sx77ckN9PO7fu5Q_Ah0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1070027403375-783h9k2nn5p7b8cdm3kua3ve92i0dt1r.apps.googleusercontent.com",
+              "client_id": "24567779503-p0p32vd125o9tdp0isdrtnlcsf65kkaf.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "24567779503-b40gml7gffvegif20p8idivgu683m1pf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ayur360App"
+              }
             }
           ]
         }
