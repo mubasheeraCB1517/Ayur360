@@ -202,7 +202,11 @@ class SecondScreen extends StatelessWidget {
                     width: width * 0.90,
                     height: 40,
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          WidgetsBinding.instance!.addPostFrameCallback((_) {
+                            Navigator.pushNamed(context, RoutesName.DOCTOR_LOGIN);
+                          });
+                        },
                         child: Text(
                           "DOCTOR LOGIN",
                           style: TextStyle(color: Colors.white, fontSize: 16),

@@ -71,6 +71,7 @@ class MyApp extends StatefulWidget {
   MyApp();
   @override
   _MyAppState createState() => _MyAppState();
+
 }
 
 class _MyAppState extends State<MyApp> {
@@ -243,13 +244,14 @@ class _MyAppState extends State<MyApp> {
               // brightness: Brightness.light,
 
               // Define the default font family.
-              fontFamily: 'OpenSans',
+              fontFamily: 'Poppins',
 
 
               // Define the default TextTheme. Use this to specify the default
               // text styling for headlines, titles, bodies of text, and more.
             ),
             debugShowCheckedModeBanner: false,
+
             // locale:
             // Provider.of<LanguageChangeProvider>(context, listen: true)
             //     // .currentLocale,

@@ -1,4 +1,6 @@
+import 'package:ayur360_app/Helpers/DashBoard/DashBoardMainScreen.dart';
 import 'package:ayur360_app/HomeScreen/Welcome.dart';
+import 'package:ayur360_app/HomeScreen/doctorLoginScreen.dart';
 import 'package:ayur360_app/HomeScreen/homeScreen.dart';
 import 'package:ayur360_app/RegistrationScreen/Patient_Registration.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,6 +11,9 @@ class RoutesName {
   static const String Patient_Registration = '/Patient_Registration';
   static const String WELCOME_PAGE = '/welcome';
    static const String LOGIN_PAGE = '/login Page';
+   static const String DOCTOR_LOGIN = '/doctorLoginScreen';
+  static const String DASHBOARD_PAGE = '/DashBoardMainScreen';
+
 
 }
 
@@ -25,6 +30,12 @@ class RouteGenerator {
       case RoutesName.LOGIN_PAGE:
         return _GeneratePageRoute(
             widget: LOGINPAGE (), routeName: settings.name);
+      case RoutesName.DOCTOR_LOGIN:
+        return _GeneratePageRoute(
+            widget: DoctorLogin (), routeName: settings.name);
+      case RoutesName.DASHBOARD_PAGE:
+        return _GeneratePageRoute(
+            widget: DashBoard (), routeName: settings.name);
 
       default:
         return _GeneratePageRoute(
