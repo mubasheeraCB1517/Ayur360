@@ -30,6 +30,9 @@ class _PatientRegistrationState extends State<PatientRegistration> {
                      )
                    ],
                  ),
+               ),
+               Container(
+                 child: Text("123"),
                )
              ],
            )
