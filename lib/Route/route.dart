@@ -1,19 +1,35 @@
 import 'package:ayur360_app/HomeScreen/Welcome.dart';
+import 'package:ayur360_app/HomeScreen/homeScreen.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../main.dart';
+
 class RoutesName {
+  static const String HOME_PAGE = '/home';
   static const String WELCOME_PAGE = '/welcome';
+   static const String LOGIN_PAGE = '/login Page';
+
 }
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case RoutesName.HOME_PAGE:
+        return _GeneratePageRoute(widget: HomePage(), routeName: settings.name);}
+    switch (settings.name) {
       case RoutesName.WELCOME_PAGE:
         return _GeneratePageRoute(
             widget: WelcomeScreen(), routeName: settings.name);
+
+      case RoutesName.LOGIN_PAGE:
+        return _GeneratePageRoute(
+            widget: LOGINPAGE (), routeName: settings.name);
+
       default:
         return _GeneratePageRoute(
             widget: WelcomeScreen(), routeName: settings.name);
+
+
     }
     }
 }
