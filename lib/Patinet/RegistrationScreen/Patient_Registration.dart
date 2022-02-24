@@ -32,6 +32,9 @@ class _PatientRegistrationState extends State<PatientRegistration> {
                  ),
                ),
                Container(
+                 color: Colors.red,
+                 width: 250,
+                 height: 150,
                  child: Text("123"),
                )
              ],

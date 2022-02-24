@@ -1,8 +1,7 @@
-import 'package:ayur360_app/Helpers/DashBoard/DashBoardMainScreen.dart';
+import 'package:ayur360_app/Doctor/DashBoard/DashBoardMainScreen.dart';
+import 'package:ayur360_app/Doctor/doctorLoginScreen.dart';
 import 'package:ayur360_app/HomeScreen/Welcome.dart';
-import 'package:ayur360_app/HomeScreen/doctorLoginScreen.dart';
-import 'package:ayur360_app/HomeScreen/homeScreen.dart';
-import 'package:ayur360_app/RegistrationScreen/Patient_Registration.dart';
+import 'package:ayur360_app/Patinet/RegistrationScreen/Patient_Registration.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../main.dart';
@@ -27,9 +26,6 @@ class RouteGenerator {
         return _GeneratePageRoute(
             widget: WelcomeScreen(), routeName: settings.name);
 
-      case RoutesName.LOGIN_PAGE:
-        return _GeneratePageRoute(
-            widget: LOGINPAGE (), routeName: settings.name);
       case RoutesName.DOCTOR_LOGIN:
         return _GeneratePageRoute(
             widget: DoctorLogin (), routeName: settings.name);
