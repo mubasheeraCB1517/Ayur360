@@ -32,7 +32,7 @@ class _MYAppointmentScreenState extends State<MYAppointmentScreen> {
                       "MY APPOINTMENTS",
                       style: TextStyle(
                           color: Colors.grey[600],
-                          fontSize: 24,
+                          fontSize: 30,
                           fontWeight: FontWeight.bold),
                     )),
               ),
@@ -64,7 +64,7 @@ class _MYAppointmentScreenState extends State<MYAppointmentScreen> {
                         color: Colors.white,
                         child: TextFormField(
                           keyboardType: TextInputType.text,
-                          autofocus: true,
+                          autofocus: false,
                           initialValue: '',
 
                           decoration: InputDecoration(

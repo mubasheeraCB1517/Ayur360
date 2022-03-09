@@ -21,11 +21,11 @@ class _MyHomePageState extends State<Login> {
         color: Colors.green[800],
       ),
       Container(
-        margin: EdgeInsets.only(top: 190),
+        margin: EdgeInsets.only(top: 190,right: 10),
         child: Center(
             child: Text(
           " Patient Login",
-          style: TextStyle(fontSize: 40, color: Colors.orange),
+          style: TextStyle(fontSize: 45, color: Colors.green[100]),
         )),
       ),
       Form(
@@ -76,12 +76,12 @@ class _MyHomePageState extends State<Login> {
             ),
             Row(children: [
               Container(
-                padding: EdgeInsets.only(top: 10, left: 120),
+                padding: EdgeInsets.only(top: 10, left: 80),
                 child: Center(
                   child: Text(
                     "Lost Password  |",
                     style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 19,
                         //fontWeight: FontWeight.bold,
                         color: Colors.black),
                   ),
@@ -96,7 +96,7 @@ class _MyHomePageState extends State<Login> {
                   child: Text(
                     "Login With OTP?",
                     style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 19,
                         //fontWeight: FontWeight.bold,
                         color: Colors.black),
                   ),
@@ -111,7 +111,7 @@ class _MyHomePageState extends State<Login> {
               height: 50,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
-                color: Colors.blue,
+                color: Colors.lightGreen[700],
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey,
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<Login> {
                 child: Text(
                   "LOGIN",
                   style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 27,
                       //fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
@@ -157,7 +157,7 @@ class _MyHomePageState extends State<Login> {
                   child: Text(
                     "DOCTOR LOGIN",
                     style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 27,
                         //fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
@@ -165,8 +165,8 @@ class _MyHomePageState extends State<Login> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 140),
-              height: 100,
+              margin: EdgeInsets.only(top: 130),
+              height: 120,
               width: width,
               child: Image.asset("assets/images/ayurlogo.png"),
             ),
@@ -174,7 +174,7 @@ class _MyHomePageState extends State<Login> {
               margin: EdgeInsets.only(top: 10),
               child: Text(
                 "New User Registration ?",
-                style: TextStyle(fontSize: 15, color: Colors.white),
+                style: TextStyle(fontSize: 19, color: Colors.white),
               ),
             ),
           ],

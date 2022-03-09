@@ -4,6 +4,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+
+
 class DoctorEvent extends StatefulWidget {
   const DoctorEvent({Key? key}) : super(key: key);
 
@@ -17,14 +19,6 @@ class _DoctorEventState extends State<DoctorEvent> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      // appBar: AppBar(
-      //   iconTheme: IconThemeData(color: Colors.black),
-      //   backgroundColor: Colors.white,
-      //
-      //   actions: <Widget>[
-      //     Image.asset("assets/images/ayurlogo.png"),
-      //   ],
-      // ),
       appBar: AppBar(
           elevation: 0,
           centerTitle: true,
@@ -71,7 +65,7 @@ class _DoctorEventState extends State<DoctorEvent> {
                       color: Colors.white,
                       child: TextFormField(
                         keyboardType: TextInputType.text,
-                        autofocus: true,
+                        autofocus: false,
                         initialValue: '',
 
                         decoration: InputDecoration(

@@ -126,11 +126,11 @@ class SecondScreen extends StatelessWidget {
           SizedBox(height: 90,),
           Container(
             margin: EdgeInsets.only(left:110,right: 110),
-            height: 35,
+            height: 40,
             width: width*0.40,
 
 decoration: BoxDecoration(
-  color: Colors.blue,
+  color: Colors.green[300],
   borderRadius: BorderRadius.circular(10),
 ),
             child: Center(child: FlatButton(onPressed: (){
@@ -138,7 +138,7 @@ decoration: BoxDecoration(
                 Navigator.pushNamed(context, RoutesName.LOGIN_PAGE);
               });
             },
-                child: Text("Get Started",style: TextStyle(fontSize: 20,color: Colors.white),))),
+                child: Text("Get Started",style: TextStyle(fontSize: 20,color: Colors.black),))),
           ),
         ],
     ),

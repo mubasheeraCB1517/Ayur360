@@ -72,13 +72,9 @@ class _AppointmentlIstScreenState extends State<AppointmentlIstScreen> {
                           height: 42,
                           color: Colors.white,
                           child: TextFormField(
-                            keyboardType: TextInputType.text,
-                            autofocus: true,
-                            initialValue: '',
 
                             decoration: InputDecoration(
                               hintText: 'Search',
-                              counterText: "",
                               prefixIcon: Icon(Icons.search),
                               contentPadding: EdgeInsets.fromLTRB(12.0, 5.0, 12.0, 5.0),
                               border: OutlineInputBorder(

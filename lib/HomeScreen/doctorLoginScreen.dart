@@ -55,9 +55,9 @@ class _DoctorLoginState extends State<DoctorLogin> {
                 child: Text(
                   "Doctor Login",
                   style: TextStyle(
-                      fontSize: 35,
+                      fontSize: 45,
 
-                      color: Colors.blue),
+                      color: Colors.green[100]),
                 ),
               ),
             ),
@@ -220,7 +220,7 @@ borderRadius: BorderRadius.circular(12.0),
               child: Text(
                 "Lost Password?",
                 style: TextStyle(
-                    fontSize: 17,
+                    fontSize: 20,
                     //fontWeight: FontWeight.bold,
                     color: Colors.black),
               ),
@@ -235,7 +235,7 @@ borderRadius: BorderRadius.circular(12.0),
             height: 50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.0),
-              color: Colors.blue,
+              color: Colors.lightGreen[700],
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey,
@@ -264,7 +264,7 @@ borderRadius: BorderRadius.circular(12.0),
                 child: Text(
                   "LOGIN",
                   style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 27,
                       //fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
@@ -294,7 +294,7 @@ borderRadius: BorderRadius.circular(12.0),
               child: Text(
                 "PATIENT LOGIN",
                 style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 27,
                     //fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),

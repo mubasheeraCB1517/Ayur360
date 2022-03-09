@@ -23,14 +23,14 @@ class _LiveConsutationcreenState extends State<LiveConsutationcreen> {
             children: [
               Container(
                 width: width * 0.64,
-                height: 30,
-                margin: const EdgeInsets.symmetric(vertical: 10),
+                height: 40,
+                margin: const EdgeInsets.only(left: 4),
                 child: Center(
                     child: Text(
                   "LIVE CONSULTATION",
                   style: TextStyle(
                       color: Colors.grey[600],
-                      fontSize: 24,
+                      fontSize: 27,
                       fontWeight: FontWeight.bold),
                 )),
               ),
@@ -49,11 +49,11 @@ class _LiveConsutationcreenState extends State<LiveConsutationcreen> {
               child: ListTile(
                   title: Container(
 
-                      child: Text("YOU ARE ONLINE NOW")),
+                      child: Text("YOU ARE ONLINE NOW",style: TextStyle(fontSize: 21),)),
                   leading: Icon(
                     Icons.circle,
                     color: Colors.lightGreenAccent[400],
-                    size: 20,
+                    size: 24,
                   ),
                   trailing: GestureDetector(
                     onTap: () {},
@@ -73,7 +73,7 @@ class _LiveConsutationcreenState extends State<LiveConsutationcreen> {
                           ),
                         ],
                       ),
-                      child: Center(child: Text("Change to offline")),
+                      child: Center(child: Text("Change to offline",style: TextStyle(fontSize: 17),)),
                     ),
                   )),
             ),
@@ -85,7 +85,7 @@ class _LiveConsutationcreenState extends State<LiveConsutationcreen> {
             child: Text(
               "Waiting for Consultation...!",
               style: TextStyle(
-                  color: Colors.grey[600], fontWeight: FontWeight.bold),
+                  color: Colors.grey[600], fontWeight: FontWeight.bold,fontSize: 19),
             ),
           )
         ]),
