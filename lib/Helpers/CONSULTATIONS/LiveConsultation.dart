@@ -1,3 +1,4 @@
+import 'package:ayur360_app/Route/route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,13 @@ class _LiveConsutationcreenState extends State<LiveConsutationcreen> {
           centerTitle: true,
           backgroundColor: Colors.white,
           iconTheme: const IconThemeData(color: Colors.black),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.black),
+            onPressed: () =>                WidgetsBinding.instance!.addPostFrameCallback((_) {
+              Navigator.pushNamed(
+                  context, RoutesName.DASHBOARD_PAGE);
+            }),
+          ),
           title: Row(
             children: [
               Container(
@@ -44,36 +52,63 @@ class _LiveConsutationcreenState extends State<LiveConsutationcreen> {
         child: Column(children: [
           Container(
 
-            padding: EdgeInsets.only(top: 20,),
-            child: Card(
+            padding: EdgeInsets.only(top: 25,),
+            child: Container(
+
+              width: width*0.95,
+              height: 80,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 3,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              margin: EdgeInsets.only(left: 12),
               child: ListTile(
                   title: Container(
 
-                      child: Text("YOU ARE ONLINE NOW",style: TextStyle(fontSize: 21),)),
-                  leading: Icon(
-                    Icons.circle,
-                    color: Colors.lightGreenAccent[400],
-                    size: 24,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 26),
+                        child: Text("YOU ARE ONLINE NOW",style: TextStyle(fontSize: 19),),
+                      )),
+                  leading: Padding(
+                    padding: const EdgeInsets.only(top: 26),
+                    child: Icon(
+                      Icons.circle,
+                      color: Colors.lightGreenAccent[400],
+                      size: 24,
+                    ),
                   ),
                   trailing: GestureDetector(
                     onTap: () {},
-                    child: Container(
-                      width: width * 0.30,
-                      height: 30,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 26),
+                      child: Container(
+                        width: width * 0.30,
+                        height: 50,
 
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(4),
-                        color: Colors.green,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 3,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                        ],
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          color: Colors.green,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 3,
+                              blurRadius: 7,
+                              offset: Offset(0, 3), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Center(child: Padding(
+                          padding: const EdgeInsets.only(top: 2),
+                          child: Text("Make offline",style: TextStyle(fontSize: 17),),
+                        )),
                       ),
-                      child: Center(child: Text("Change to offline",style: TextStyle(fontSize: 17),)),
                     ),
                   )),
             ),

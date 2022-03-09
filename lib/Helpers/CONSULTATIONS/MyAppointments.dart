@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +12,7 @@ class _MYAppointmentScreenState extends State<MYAppointmentScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height= MediaQuery.of(context).size.height;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
           elevation: 0,
@@ -26,15 +24,15 @@ class _MYAppointmentScreenState extends State<MYAppointmentScreen> {
               Container(
                 width: width * 0.64,
                 height: 30,
-                margin: const EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.only(left: 4.1),
                 child: Center(
                     child: Text(
-                      "MY APPOINTMENTS",
-                      style: TextStyle(
-                          color: Colors.grey[600],
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold),
-                    )),
+                  "MY APPOINTMENTS",
+                  style: TextStyle(
+                      color: Colors.grey[600],
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold),
+                )),
               ),
               SizedBox(
                 width: 27,
@@ -56,9 +54,7 @@ class _MYAppointmentScreenState extends State<MYAppointmentScreen> {
                       left: 10,
                       //  bottom: 10,
 
-
-
-                      child:  Container(
+                      child: Container(
                         width: width * 0.96,
                         height: 42,
                         color: Colors.white,
@@ -66,20 +62,18 @@ class _MYAppointmentScreenState extends State<MYAppointmentScreen> {
                           keyboardType: TextInputType.text,
                           autofocus: false,
                           initialValue: '',
-
                           decoration: InputDecoration(
                             hintText: 'Search',
                             counterText: "",
                             prefixIcon: Icon(Icons.search),
-                            contentPadding: EdgeInsets.fromLTRB(12.0, 5.0, 12.0, 5.0),
+                            contentPadding:
+                                EdgeInsets.fromLTRB(12.0, 5.0, 12.0, 5.0),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5.0),
                                 borderSide: BorderSide(color: Colors.grey)),
                           ),
                         ),
-
                       )),
-
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Container(
@@ -88,88 +82,77 @@ class _MYAppointmentScreenState extends State<MYAppointmentScreen> {
                       child: DataTable(
                         columns: const <DataColumn>[
                           DataColumn(
-
                             label: Text(
                               'S.No',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                                  fontWeight: FontWeight.bold, fontSize: 19),
                             ),
                           ),
                           DataColumn(
                             label: Text(
                               'Booking',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                                  fontWeight: FontWeight.bold, fontSize: 19),
                             ),
                           ),
-
                           DataColumn(
                             label: Text(
                               'Action',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                                  fontWeight: FontWeight.bold, fontSize: 19),
                             ),
                           ),
-
                         ],
                         rows: const <DataRow>[
                           DataRow(
                             cells: <DataCell>[
                               DataCell(
-                                Text('1'),
+                                Text('1',style: TextStyle(fontSize: 19)),
                               ),
                               DataCell(
-                                Text('Appointment for Arun K on 19 Feb 2022 20:27:51'),
+                                Text(
+                                  'Appointment for Arun K on 19 Feb 2022 20:27:51',
+                                  style: TextStyle(fontSize: 19),
+                                ),
                               ),
-
-                              DataCell(
-
-                                  Icon(
-                                    Icons.edit,
-                                    color: Colors.cyan,
-                                  )
-
-                              ),
-
+                              DataCell(Icon(
+                                Icons.edit,
+                                color: Colors.cyan,
+                              )),
                             ],
                           ),
                           DataRow(
                             cells: <DataCell>[
                               DataCell(
-                                Text('2'),
+                                Text('2',style: TextStyle(fontSize: 19)),
                               ),
                               DataCell(
-                                Text('Appointment for Arun K on 19 Feb 2022 20:27:51'),
+                                Text(
+                                  'Appointment for Arun K on 19 Feb 2022 20:27:51',
+                                  style: TextStyle(fontSize: 19),
+                                ),
                               ),
-
-                              DataCell(
-
-                                  Icon(
-                                    Icons.edit,
-                                    color: Colors.cyan,
-                                  )
-
-                              ),
+                              DataCell(Icon(
+                                Icons.edit,
+                                color: Colors.cyan,
+                              )),
                             ],
                           ),
                           DataRow(
                             cells: <DataCell>[
                               DataCell(
-                                Text('3'),
+                                Text('3' ,style: TextStyle(fontSize: 19)),
                               ),
                               DataCell(
-                                Text('Appointment for Arun K on 19 Feb 2022 20:27:51'),
+                                Text(
+                                  'Appointment for Arun K on 19 Feb 2022 20:27:51',
+                                  style: TextStyle(fontSize: 19),
+                                ),
                               ),
-
-                              DataCell(
-
-                                  Icon(
-                                    Icons.edit,
-                                    color: Colors.cyan,
-                                  )
-
-                              ),
-
+                              DataCell(Icon(
+                                Icons.edit,
+                                color: Colors.cyan,
+                              )),
                             ],
                           ),
                         ],

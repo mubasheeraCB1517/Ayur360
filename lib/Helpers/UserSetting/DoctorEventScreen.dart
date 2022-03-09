@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:ayur360_app/Route/route.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,13 @@ class _DoctorEventState extends State<DoctorEvent> {
           centerTitle: true,
           backgroundColor: Colors.white,
           iconTheme: const IconThemeData(color: Colors.black),
+    leading: IconButton(
+    icon: Icon(Icons.arrow_back, color: Colors.black),
+    onPressed: () =>                WidgetsBinding.instance!.addPostFrameCallback((_) {
+    Navigator.pushNamed(
+    context, RoutesName.DASHBOARD_PAGE);
+    }),
+    ),
           title: Row(
             children: [
               Container(
@@ -35,7 +43,7 @@ class _DoctorEventState extends State<DoctorEvent> {
                   "LEAVE REPORTING",
                   style: TextStyle(
                       color: Colors.grey[600],
-                      fontSize: 24,
+                      fontSize: 29,
                       fontWeight: FontWeight.bold),
                 )),
               ),
@@ -91,7 +99,7 @@ class _DoctorEventState extends State<DoctorEvent> {
                       ),
                       child: Center(
                         child: ElevatedButton(
-                          child: const Text('showModalBottomSheet'),
+                          child: const Text('Create New'),
                           onPressed: () {
                             showModalBottomSheet<void>(
                               context: context,
@@ -132,63 +140,63 @@ class _DoctorEventState extends State<DoctorEvent> {
                             label: Text(
                               'S.No',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                                  fontSize: 19),
                             ),
                           ),
                           DataColumn(
                             label: Text(
                               'Reason',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                                   fontSize: 19),
                             ),
                           ),
                           DataColumn(
                             label: Text(
                               'Leave Date',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                                   fontSize: 19),
                             ),
                           ),
                           DataColumn(
                             label: Text(
                               'Time Duration From',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                                  fontSize: 19),
                             ),
                           ),
                           DataColumn(
                             label: Text(
                               'Time Duration To',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                              fontSize: 19),
                             ),
                           ),
                           DataColumn(
                             label: Text(
                               'Doctor',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                                  fontWeight: FontWeight.bold, fontSize: 19),
                             ),
                           ),
                           DataColumn(
                             label: Text(
                               'Full Day Leave',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                              fontSize: 19),
                             ),
                           ),
                           DataColumn(
                             label: Text(
                               'Edit',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                                fontSize: 19),
                             ),
                           ),
                           DataColumn(
                             label: Text(
                               'Delete',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                                fontSize: 19),
                             ),
                           ),
                         ],
@@ -196,25 +204,25 @@ class _DoctorEventState extends State<DoctorEvent> {
                           DataRow(
                             cells: <DataCell>[
                               DataCell(
-                                Text('1'),
+                                Text('1',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('Fever'),
+                                Text('Fever',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('23/02/2022'),
+                                Text('23/02/2022',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('00:00'),
+                                Text('00:00',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('00:00'),
+                                Text('00:00',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('Sarath'),
+                                Text('Sarath',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('Full day'),
+                                Text('Full day',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
 
@@ -237,25 +245,25 @@ class _DoctorEventState extends State<DoctorEvent> {
                           DataRow(
                             cells: <DataCell>[
                               DataCell(
-                                Text('2'),
+                                Text('2',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('cold'),
+                                Text('cold',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('24/02/2022'),
+                                Text('24/02/2022',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('00:00'),
+                                Text('00:00',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('00:00'),
+                                Text('00:00',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('Sarath'),
+                                Text('Sarath',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('full Day'),
+                                Text('full Day',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
 
@@ -277,25 +285,25 @@ class _DoctorEventState extends State<DoctorEvent> {
                           DataRow(
                             cells: <DataCell>[
                               DataCell(
-                                Text('3'),
+                                Text('3',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('Marrriage Function'),
+                                Text('Marrriage Function',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('3/03/2022'),
+                                Text('3/03/2022',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('9:00 am'),
+                                Text('9:00 am',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('1:00pm'),
+                                Text('1:00pm',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('Sarath'),
+                                Text('Sarath',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
-                                Text('Half Day'),
+                                Text('Half Day',style: TextStyle(fontSize: 19),),
                               ),
                               DataCell(
 
