@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:ayur360_app/Helpers/deviceInfo.dart';
-import 'package:ayur360_app/Helpers/hiveshareperfrence.dart';
 import 'package:ayur360_app/Route/route.dart';
 import 'package:ayur360_app/Updater/upgrader.dart';
 
@@ -53,97 +51,96 @@ class SecondScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.green[900],
-      body: SingleChildScrollView(
-        child: Column(
-        children: [
+        backgroundColor: Colors.green[900],
+        body:
+          Column(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
 
-          Center(
-            child: Container(
-              width: width,
-              margin: EdgeInsets.only(top: 100),
-              padding: EdgeInsets.symmetric(vertical: 2, horizontal: 40),
-              child: Center(
-                child: Text(
-                  "Online Consultation",
-                  style: TextStyle(
-                      fontSize: 35,
-                      //: FontWeight.normal,
-                      color: Colors.white),
+              Center(
+                child: Container(
+                  width: width,
+                  margin: EdgeInsets.only(top: 50),
+                  padding: EdgeInsets.symmetric(vertical: 2, horizontal: 40),
+                  child: Center(
+                    child: Text(
+                      "Online Consultation",
+                      style: TextStyle(
+                          fontSize: 35,
+                          //: FontWeight.normal,
+                          color: Colors.white),
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-          Center(
-            child: Container(
-              width: width,
-              padding: EdgeInsets.symmetric(horizontal: 60),
-              child: Center(
-                child: Text(
-                  " With",
-                  style: TextStyle(fontSize: 39, color: Colors.white),
+              Center(
+                child: Container(
+                  width: width,
+                  padding: EdgeInsets.symmetric(horizontal: 60),
+                  child: Center(
+                    child: Text(
+                      " With",
+                      style: TextStyle(fontSize: 39, color: Colors.white),
+                    ),
+                  ),
                 ),
               ),
-            ),
+
+              Center(
+                child: Container(
+                  width: width,
+                  padding: EdgeInsets.symmetric(horizontal: 60),
+                  child: Center(
+                    child: Text(
+                      "Ayurveda Doctors",
+                      style: TextStyle(fontSize: 35, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Center(
+                child: Container(
+                  width: width,
+                  padding: EdgeInsets.symmetric(horizontal: 60),
+                  child: Center(
+                    child: Text(
+                      "(General & Specialities)",
+                      style: TextStyle(
+                          fontSize: 25,
+                          //fontWeight: FontWeight.bold,
+                          color: Colors.blue),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 50),
+                height: 350,
+                width: width,
+                child: Image.asset("assets/images/ayurlogo.png"),
+              ),
+              SizedBox(height: 60,),
+              Container(
+                margin: EdgeInsets.only(left:110,right: 110),
+                height: 40,
+                width: width*0.40,
+
+                decoration: BoxDecoration(
+                  color: Colors.green[300],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(child: FlatButton(onPressed: (){
+                  WidgetsBinding.instance!.addPostFrameCallback((_) {
+                    Navigator.pushNamed(context, RoutesName.LOGIN_PAGE);
+                  });
+                },
+                    child: Text("Get Started",style: TextStyle(fontSize: 20,color: Colors.black),))),
+              ),
+            ],
           ),
 
-          Center(
-            child: Container(
-              width: width,
-              padding: EdgeInsets.symmetric(horizontal: 60),
-              child: Center(
-                child: Text(
-                  "Ayurveda Doctors",
-                  style: TextStyle(fontSize: 35, color: Colors.white),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          Center(
-            child: Container(
-              width: width,
-              padding: EdgeInsets.symmetric(horizontal: 60),
-              child: Center(
-                child: Text(
-                  "(General & Specialities)",
-                  style: TextStyle(
-                      fontSize: 25,
-                      //fontWeight: FontWeight.bold,
-                      color: Colors.blue),
-                ),
-              ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 90),
-            height: 350,
-            width: width,
-            child: Image.asset("assets/images/ayurlogo.png"),
-          ),
-          SizedBox(height: 90,),
-          Container(
-            margin: EdgeInsets.only(left:110,right: 110),
-            height: 40,
-            width: width*0.40,
-
-decoration: BoxDecoration(
-  color: Colors.green[300],
-  borderRadius: BorderRadius.circular(10),
-),
-            child: Center(child: FlatButton(onPressed: (){
-              WidgetsBinding.instance!.addPostFrameCallback((_) {
-                Navigator.pushNamed(context, RoutesName.LOGIN_PAGE);
-              });
-            },
-                child: Text("Get Started",style: TextStyle(fontSize: 20,color: Colors.black),))),
-          ),
-        ],
-    ),
-      )
     );
   }
-  }
-
+}

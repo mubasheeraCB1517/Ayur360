@@ -1,15 +1,9 @@
-import 'package:ayur360_app/Helpers/CONSULTATIONS/LiveConsultation.dart';
-import 'package:ayur360_app/Helpers/CONSULTATIONS/MyAppointments.dart';
-import 'package:ayur360_app/Helpers/ChangePassword/ChangePasswordScrren.dart';
-import 'package:ayur360_app/Helpers/DashBoard/DashBoardMainScreen.dart';
-import 'package:ayur360_app/Helpers/MYPROFILE/MYProfileEditScreen.dart';
-import 'package:ayur360_app/Helpers/MYPROFILE/MyPracticeTimeScreen.dart';
-import 'package:ayur360_app/Helpers/PATIENT/Appointmentlist.dart';
-import 'package:ayur360_app/Helpers/PATIENT/ClinicalNotes.dart';
-import 'package:ayur360_app/Helpers/PATIENT/LabTest.dart';
-import 'package:ayur360_app/Helpers/PATIENT/Treatmentplancreen.dart';
-import 'package:ayur360_app/Helpers/PATIENT/VitalSign.dart';
-import 'package:ayur360_app/Helpers/PATIENT/prescriptions.dart';
+
+
+import 'package:ayur360_app/Doctor/Patient/VitalSign.dart';
+import 'package:ayur360_app/Doctor/Patient/labTestList.dart';
+import 'package:ayur360_app/Doctor/Patient/prescriptionList.dart';
+import 'package:ayur360_app/Doctor/Patient/vitalsignList.dart';
 import 'package:ayur360_app/HomeScreen/Welcome.dart';
 import 'package:ayur360_app/HomeScreen/doctorLoginScreen.dart';
 import 'package:ayur360_app/HomeScreen/alluserlogin.dart';
@@ -17,9 +11,23 @@ import 'package:flutter/cupertino.dart';
 
 
 
-//import '../Helpers/DashBoard/UserSetting/MYPROFILE/Myprofilescreeen.dart';
-import '../Helpers/MYPROFILE/Myprofilescreeen.dart';
-import '../Helpers/UserSetting/DoctorEventScreen.dart';
+//import '../Doctor/DashBoard/UserSetting/MyProfile/Myprofilescreeen.dart';
+
+import '../Doctor/CONSULTATIONS/LiveConsultation.dart';
+import '../Doctor/CONSULTATIONS/MyAppointments.dart';
+import '../Doctor/ChangePassword/ChangePasswordScrren.dart';
+import '../Doctor/DashBoard/DashBoardMainScreen.dart';
+import '../Doctor/MYPROFILE/MYProfileEditScreen.dart';
+import '../Doctor/MYPROFILE/MyPracticeTimeScreen.dart';
+import '../Doctor/MYPROFILE/Myprofilescreeen.dart';
+import '../Doctor/PATIENT/Appointmentlist.dart';
+import '../Doctor/PATIENT/LabTest.dart';
+import '../Doctor/PATIENT/Treatmentplancreen.dart';
+
+import '../Doctor/PATIENT/prescriptions.dart';
+import '../Doctor/Patient/ClinicalNotes.dart';
+import '../Doctor/Patient/clinicalTestList.dart';
+import '../Doctor/UserSetting/DoctorEventScreen.dart';
 import '../main.dart';
 
 class RoutesName {
@@ -42,7 +50,10 @@ class RoutesName {
   static const String MY_PROFILEEDIT = '/MYProfileEditScreen';
   static const String MY_PRACTICETIME = '/MyPracticeTimeScreen';
   static const String CHANGE_PASSWORD = '/ChangePasswordScrren';
-
+  static const String PRESCRIPTION_LISt = '/prescriptionList';
+  static const String LAB_TESTLIST = '/labTestList';
+  static const String CLINICAL_TESTLIST ='/clinicalTestList';
+  static const String VITALSIGN_LIST ='/vitalsignList';
 
 
 }
@@ -86,10 +97,10 @@ class RouteGenerator {
             widget: TreatmentPlanScreen (), routeName: settings.name);
       case RoutesName.VITAL_SIGN:
         return _GeneratePageRoute(
-            widget: VitalSignScreen (), routeName: settings.name);
+            widget: PAtientVitalSignScreen(),routeName: settings.name);
       case RoutesName.CLINICAL_NOTES:
         return _GeneratePageRoute(
-            widget: ClinicalNotesScreen (), routeName: settings.name);
+            widget: PatientClinicalTestScreen (), routeName: settings.name);
       case RoutesName.LIVE_CONSULTIION:
         return _GeneratePageRoute(
             widget: LiveConsutationcreen (), routeName: settings.name);
@@ -107,6 +118,23 @@ class RouteGenerator {
         return _GeneratePageRoute(
             widget: ChangePasswordScreen (), routeName: settings.name);
 
+      case RoutesName.PRESCRIPTION_LISt:
+        List<dynamic>? args = settings.arguments as List?;
+        return _GeneratePageRoute(
+            widget: prescriptionListScreen(detailsDTO: [args],), routeName: settings.name);
+
+      case RoutesName.LAB_TESTLIST:
+        List<dynamic>? args = settings.arguments as List?;
+        return _GeneratePageRoute(
+            widget: lablistScreen(detailsDTO: [args],), routeName: settings.name);
+      case RoutesName.CLINICAL_TESTLIST:
+        List<dynamic>? args = settings.arguments as List?;
+        return _GeneratePageRoute(
+            widget: ClinicalTestListScreen( detailsDTO: [args],), routeName: settings.name);
+      case RoutesName.VITALSIGN_LIST:
+        List<dynamic>? args = settings.arguments as List?;
+        return _GeneratePageRoute(
+            widget: vitalsignListScreen( vitaldetailsDTO: [args],), routeName: settings.name);
       default:
         return _GeneratePageRoute(
             widget: WelcomeScreen(), routeName: settings.name);

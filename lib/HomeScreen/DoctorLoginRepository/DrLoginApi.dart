@@ -7,6 +7,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+var TOKEN ;
+var userid ;
 class drLOginRepository {
 
   var dio = Dio();
@@ -31,7 +33,7 @@ class drLOginRepository {
           data: formData);
     var token = responseData.data;
     var token1 = token?["data"];
-    var TOKEN = token1["token"];
+    TOKEN = token1["token"];
       print("token1->>>>>${TOKEN}");
       print("Response->>>>>${responseData.toString()}");
 
@@ -50,6 +52,8 @@ class drLOginRepository {
 
             ));
         var role = response.data;
+        var userId = response.data;
+        userid = userId?["id"];
         print("role->>>>>${role}");
         var role1 = role?["roles"];
         print("role1->>>>>${role1}");

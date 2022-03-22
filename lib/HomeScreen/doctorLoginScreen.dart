@@ -152,6 +152,7 @@ class _DoctorLoginState extends State<DoctorLogin> {
             child: new TextFormField(controller: UserNameController,
               decoration: InputDecoration(
                 //  contentPadding: EdgeInsets.all(8.0),
+
                 contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 15),
 filled: true,
                 fillColor: Colors.white,
@@ -247,7 +248,8 @@ borderRadius: BorderRadius.circular(12.0),
 
             child: Center(
               child: FlatButton(
-                onPressed: (){setState(() {
+                onPressed: (){
+                  setState(() {
                   if (_formKey.currentState!.validate()) {
                     print("Form was Submitted Successfully");
                     UserNameController.text.isEmpty
@@ -292,7 +294,7 @@ borderRadius: BorderRadius.circular(12.0),
 
             child: Center(
               child: Text(
-                "PATIENT LOGIN",
+                "Patient LOGIN",
                 style: TextStyle(
                     fontSize: 27,
                     //fontWeight: FontWeight.bold,
