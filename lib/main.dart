@@ -7,7 +7,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart' as pathProvider;
 import 'package:firebase_core/firebase_core.dart';
@@ -18,8 +17,6 @@ import 'package:responsive_framework/utils/scroll_behavior.dart';
 
 import 'HomeScreen/Welcome.dart';
 import 'Route/route.dart';
-
-
 
 // Toggle this to cause an async error to be thrown during initialization
 // and to test that runZonedGuarded() catches the error
@@ -34,13 +31,13 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  HttpOverrides.global = MyHttpOverrides();
   //await SharedPrefs().init();
 
   // await DeviceInfo().init();
   // await PackageInfos().init();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
-    SystemUiOverlay.bottom, SystemUiOverlay.top
-  ]);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top]);
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
     statusBarIconBrightness: Brightness.dark,
@@ -64,23 +61,21 @@ Future<void> main() async {
     runApp(MyApp());
   }, FirebaseCrashlytics.instance.recordError);
 }
+
 class MyApp extends StatefulWidget {
   // final AppLanguage appLanguage;
 
   //MyApp{required this.appLanguage}();
   MyApp();
+
   @override
   _MyAppState createState() => _MyAppState();
-
 }
 
 class _MyAppState extends State<MyApp> {
-
-
   static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
   static FirebaseAnalyticsObserver observer =
-  FirebaseAnalyticsObserver(analytics: analytics);
-
+      FirebaseAnalyticsObserver(analytics: analytics);
 
   late FirebaseMessaging _messaging;
   late int _totalNotifications;
@@ -176,7 +171,7 @@ class _MyAppState extends State<MyApp> {
   checkForInitialMessage() async {
     await Firebase.initializeApp();
     RemoteMessage? initialMessage =
-    await FirebaseMessaging.instance.getInitialMessage();
+        await FirebaseMessaging.instance.getInitialMessage();
 
     if (initialMessage != null) {
       PushNotification notification = PushNotification(
@@ -217,57 +212,56 @@ class _MyAppState extends State<MyApp> {
     print("fdsafsdf111");
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     //SizeConfig().init(context);
 
     return ChangeNotifierProvider(
-
-      create: (BuildContext context) {  },
+      create: (BuildContext context) {},
       child: Builder(
           builder: (context) => MaterialApp(
-            builder: (context, widget) => ResponsiveWrapper.builder(
-              BouncingScrollWrapper.builder(context, widget!),
-              maxWidth: 1200,
-              minWidth: 450,
-              defaultScale: true,
-              breakpoints: [
-                ResponsiveBreakpoint.resize(450, name: MOBILE),
-                ResponsiveBreakpoint.autoScale(800, name: TABLET),
-                ResponsiveBreakpoint.autoScale(1000, name: TABLET),
-                ResponsiveBreakpoint.resize(1200, name: DESKTOP),
-                ResponsiveBreakpoint.autoScale(2460, name: "4K"),
-              ],
-            ),
-            theme: ThemeData(
-              // Define the default brightness and colors.
-              // brightness: Brightness.light,
+                builder: (context, widget) => ResponsiveWrapper.builder(
+                  BouncingScrollWrapper.builder(context, widget!),
+                  maxWidth: 1200,
+                  minWidth: 450,
+                  defaultScale: true,
+                  breakpoints: [
+                    ResponsiveBreakpoint.resize(450, name: MOBILE),
+                    ResponsiveBreakpoint.autoScale(800, name: TABLET),
+                    ResponsiveBreakpoint.autoScale(1000, name: TABLET),
+                    ResponsiveBreakpoint.resize(1200, name: DESKTOP),
+                    ResponsiveBreakpoint.autoScale(2460, name: "4K"),
+                  ],
+                ),
+                theme: ThemeData(
+                  // Define the default brightness and colors.
+                  // brightness: Brightness.light,
 
-              // Define the default font family.
-              fontFamily: 'Poppins',
+                  // Define the default font family.
+                  fontFamily: 'Poppins',
 
+                  // Define the default TextTheme. Use this to specify the default
+                  // text styling for headlines, titles, bodies of text, and more.
+                ),
+                debugShowCheckedModeBanner: false,
 
-              // Define the default TextTheme. Use this to specify the default
-              // text styling for headlines, titles, bodies of text, and more.
-            ),
-            debugShowCheckedModeBanner: false,
-
-            // locale:
-            // Provider.of<LanguageChangeProvider>(context, listen: true)
-            //     // .currentLocale,
-            // localizationsDelegates: [
-            //   S.delegate,
-            //   GlobalMaterialLocalizations.delegate,
-            //   GlobalWidgetsLocalizations.delegate,
-            //   GlobalCupertinoLocalizations.delegate,
-            // ],
-            // supportedLocales: S.delegate.supportedLocales,
-            navigatorObservers: <NavigatorObserver>[observer],
-            onGenerateRoute: RouteGenerator.generateRoute,
-            initialRoute: RoutesName.WELCOME_PAGE,
-            //  home:HomePage(),// WelcomeScreen(),
-            //   builder: (context, child) => HomePage(child: child),
-          )),
+                // locale:
+                // Provider.of<LanguageChangeProvider>(context, listen: true)
+                //     // .currentLocale,
+                // localizationsDelegates: [
+                //   S.delegate,
+                //   GlobalMaterialLocalizations.delegate,
+                //   GlobalWidgetsLocalizations.delegate,
+                //   GlobalCupertinoLocalizations.delegate,
+                // ],
+                // supportedLocales: S.delegate.supportedLocales,
+                navigatorObservers: <NavigatorObserver>[observer],
+                onGenerateRoute: RouteGenerator.generateRoute,
+                initialRoute: RoutesName.WELCOME_PAGE,
+                //  home:HomePage(),// WelcomeScreen(),
+                //   builder: (context, child) => HomePage(child: child),
+              )),
     );
   }
 }
@@ -372,7 +366,7 @@ class _HomePageState extends State<HomePage> {
   checkForInitialMessage() async {
     await Firebase.initializeApp();
     RemoteMessage? initialMessage =
-    await FirebaseMessaging.instance.getInitialMessage();
+        await FirebaseMessaging.instance.getInitialMessage();
 
     if (initialMessage != null) {
       PushNotification notification = PushNotification(
@@ -417,7 +411,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: WelcomeScreen(),
     );
   }
@@ -462,4 +455,13 @@ class PushNotification {
   String body;
   String dataTitle;
   String dataBody;
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
 }

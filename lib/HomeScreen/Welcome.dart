@@ -1,7 +1,13 @@
 import 'dart:async';
-import 'package:ayur360_app/Route/route.dart';
-import 'package:flutter/material.dart';
 
+import 'package:ayur360_app/Route/route.dart';
+import 'package:ayur360_app/Updater/upgrader.dart';
+
+import 'package:flutter/material.dart';
+import 'package:launch_review/launch_review.dart';
+
+import 'alluserlogin.dart';
+import 'alluserlogin.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -38,183 +44,98 @@ class SecondScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Container(
-        width: width,
-        height: height,
-        child: Flexible(
-          flex: 5,
-          child: SingleChildScrollView(
-            physics: NeverScrollableScrollPhysics(),
-            child: Column(
-              children: [
-                Container(
-                  height: height * 0.420,
-                  color: Color(0xFF0F4A05),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: width,
-                        height: height * 0.30,
-                        child: Stack(children: [
-                          Center(
-                            child: Image.asset(
-                              'assets/images/ayurlogo.png',
-                            ),
-                          ),
-                        ]),
-                      ),
-                      Text(
-                        "Online Consultation With Ayurveda Doctors",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "(General & Specialities)",
-                        style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
+      backgroundColor: Colors.green[900],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Container(
+              width: width,
+              margin: EdgeInsets.only(top: 50),
+              padding: EdgeInsets.symmetric(vertical: 2, horizontal: 40),
+              child: Center(
+                child: Text(
+                  "Online Consultation",
+                  style: TextStyle(
+                      fontSize: 35,
+                      //: FontWeight.normal,
+                      color: Colors.white),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text("Patient Login",
-                    style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 20,
-                        )),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  width: width * 0.90,
-                  height: 50,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Username',
-                      contentPadding:
-                          EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0)),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  width: width * 0.90,
-                  height: 50,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Password',
-                      contentPadding:
-                          EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0)),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  "Lost Password? | Login with OTP",
-                  style: TextStyle(color: Colors.black, fontSize: 20),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFF169dda),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 5,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    width: width * 0.90,
-                    height: 40,
-                    child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "LOG IN",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ))),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color(0xFFf08a1a),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 7,
-                          blurRadius: 7,
-                          offset: Offset(0, 5), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    width: width * 0.90,
-                    height: 40,
-                    child: TextButton(
-                        onPressed: () {
-                 WidgetsBinding.instance!.addPostFrameCallback((_) {
-                   Navigator.pushNamed(context, RoutesName.Patient_Registration);
-                 });
-                        },
-                        child: Text(
-                          "NEW USER REGISTRATION",
-                          style: TextStyle(color: Colors.black, fontSize: 16),
-                        ))),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.green[600],
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 7,
-                          blurRadius: 7,
-                          offset: Offset(0, 5), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    width: width * 0.90,
-                    height: 40,
-                    child: TextButton(
-                        onPressed: () {
-                          WidgetsBinding.instance!.addPostFrameCallback((_) {
-                            Navigator.pushNamed(context, RoutesName.DOCTOR_LOGIN);
-                          });
-                        },
-                        child: Text(
-                          "DOCTOR LOGIN",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ))),
-              ],
+              ),
             ),
           ),
-        ),
+          Center(
+            child: Container(
+              width: width,
+              padding: EdgeInsets.symmetric(horizontal: 60),
+              child: Center(
+                child: Text(
+                  " With",
+                  style: TextStyle(fontSize: 39, color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+          Center(
+            child: Container(
+              width: width,
+              padding: EdgeInsets.symmetric(horizontal: 60),
+              child: Center(
+                child: Text(
+                  "Ayurveda Doctors",
+                  style: TextStyle(fontSize: 35, color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Center(
+            child: Container(
+              width: width,
+              padding: EdgeInsets.symmetric(horizontal: 60),
+              child: Center(
+                child: Text(
+                  "(General & Specialities)",
+                  style: TextStyle(
+                      fontSize: 25,
+                      //fontWeight: FontWeight.bold,
+                      color: Colors.blue),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 50),
+            height: 350,
+            width: width,
+            child: Image.asset("assets/images/ayurlogo.png"),
+          ),
+          SizedBox(
+            height: 60,
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 110, right: 110),
+            height: 40,
+            width: width * 0.40,
+            decoration: BoxDecoration(
+              color: Colors.green[300],
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+                child: FlatButton(
+                    onPressed: () {
+                      WidgetsBinding.instance!.addPostFrameCallback((_) {
+                        Navigator.pushNamed(context, RoutesName.LOGIN_PAGE);
+                      });
+                    },
+                    child: Text(
+                      "Get Started",
+                      style: TextStyle(fontSize: 20, color: Colors.black),
+                    ))),
+          ),
+        ],
       ),
     );
   }
